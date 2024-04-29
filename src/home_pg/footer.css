@@ -1,0 +1,48 @@
+.footer {
+  background-color: #62A38F;
+  padding: 20px 0px 10px 0px;
+}
+
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 2rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2rem;
+  color: var(--black);
+  padding: 5px 0px 0px 0px;
+}
+
+.footer .box-container .box a {
+  display: block;
+  font-size: 18px;
+  text-align: left;
+  color: var(--white-color);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box a i {
+  padding-right: -2rem;
+  color: rgb(25, 88, 25);
+}
+
+.footer .box-container .box a:hover i {
+  padding-right: 1.5rem;
+}
+
+.footer .credit {
+  padding: 1rem;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(99, 99, 99);
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.footer .credit span {
+  color: rgb(19, 19, 19);
+}

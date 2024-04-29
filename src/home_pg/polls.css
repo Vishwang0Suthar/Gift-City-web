@@ -1,0 +1,125 @@
+.polls {
+    display: flex;
+    right: 0;
+    overflow: hidden;
+    /* margin-top: -1%; */
+    max-height: 65dvh;
+    margin-left: 7%;
+    margin-right: 2%;
+    z-index: 1;
+    padding: 2%;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.23);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.2px);
+    -webkit-backdrop-filter: blur(3.2px);
+    border: 1px solid rgba(255, 255, 255, 0.31);
+}
+
+.polls-container {
+    display: flex;
+    width: 100%;
+    z-index: 1;
+
+
+}
+
+.box p {
+    font-size: 15px;
+    font-weight: 900;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 10px;
+    padding: 5%;
+    margin-left: -2%;
+    margin-top: 5%;
+    border-radius: 2em;
+    border: 2px solid black;
+    transition: all 450ms ease-in-out;
+
+
+}
+
+.selectedoption {
+    font-size: 15px;
+    font-weight: 900;
+    color: aliceblue;
+    background: #000;
+    border: 2px solid white;
+    padding: 5%;
+    margin-left: -2%;
+    margin-top: 5%;
+    border-radius: 2em;
+    transition: all 550ms ease-in-out;
+}
+
+
+
+.box {
+    display: flex;
+    flex-direction: column;
+    /* gap: 2%; */
+    max-height: 28rem;
+    min-width: 20rem;
+    padding: 3%;
+    position: relative;
+    align-items: center;
+    transition: all ease-in-out;
+    pointer-events: visible;
+    z-index: 1;
+
+
+    /* &:hover{
+    scale: 1.00005;
+  } */
+    &::before,
+    &::after {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transition: transform all 650ms ease-in-out;
+        transform-origin: center;
+    }
+
+    &::before {
+        border-left: 2px solid rgb(0, 0, 0);
+        transition: transform 650ms ease-in-out;
+        transform: scale3d(1, 0, 1);
+    }
+
+    &:hover::before,
+    &:hover+.box::before {
+        transform: scale3d(1, 1, 1);
+        transition: transform 550ms ease-in-out;
+    }
+
+    &:last-child:hover::before {
+        border-right: 2px solid rgb(0, 0, 0);
+    }
+
+    &:not(:first-child)::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0px;
+        width: 1.5px;
+        background-color: rgba(0, 0, 0, 0.306);
+    }
+}
+
+.box header {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    font-style: normal;
+}

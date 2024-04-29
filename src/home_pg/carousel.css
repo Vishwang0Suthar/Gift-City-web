@@ -1,0 +1,133 @@
+/* Carousel.css */
+
+
+/* .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  
+img {
+    
+    width: 80%;} /* Adjust this as needed */
+
+
+/*/
+
+/* Add styles for the carousel */
+
+
+/* .carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    width: 180%;
+    overflow: hidden;
+    overflow-x: hidden;
+  } */
+
+.carousel {
+    display: flex;
+    right: 0;
+    overflow: hidden;
+    margin-top: -2%;
+    max-height: 65dvh;
+    margin-left: 7%;
+    margin-right: 2%;
+    padding: 2%;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.23);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3.2px);
+    -webkit-backdrop-filter: blur(3.2px);
+    border: 1px solid rgba(255, 255, 255, 0.31);
+}
+
+.image-container {
+    display: flex;
+    width: 100%;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    max-height: 28rem;
+    min-width: 20rem;
+    padding: 3%;
+    position: relative;
+    transition: all ease-in-out;
+
+    /* &:hover{
+    scale: 1.00005;
+  } */
+    &::before,
+    &::after {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform-origin: center;
+    }
+
+    &::before {
+        border-left: 2px solid rgb(0, 0, 0);
+        transition: transform 650ms ease-in-out;
+        transform: scale3d(1, 0, 1);
+    }
+
+    &:hover::before,
+    &:hover+.item::before {
+        transform: scale3d(1, 1, 1);
+        transition: transform 550ms ease-in-out;
+    }
+
+    &:last-child:hover::before {
+        border-right: 2px solid rgb(0, 0, 0);
+    }
+
+    &:not(:first-child)::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0px;
+        width: 1.5px;
+        background-color: rgba(0, 0, 0, 0.306);
+    }
+}
+
+.item img {
+    border-radius: 0.2rem;
+    width: 40vmin;
+    margin-top: -12%;
+    height: 90%;
+    cursor: grab;
+    object-fit: cover;
+    pointer-events: none;
+    /* border-right: 9px solid black; */
+    /* border-width: 5px; */
+    box-shadow: 4px 4px 5px 3px rgba(0, 0, 0, 0.776);
+}
+
+.item p {
+    font-size: 11.5px;
+    font-weight: 900;
+    color: #000;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+}
+
+.item h1 {
+    font-size: 20px;
+    font-weight: 700;
+}

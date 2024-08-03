@@ -26,12 +26,12 @@ function Footer() {
             </div>
             <div className='footer-bottom'>
                 <ul>
-                    <li><h5>Home</h5></li>
+                    <li><h5><a href='#'>Home</a></h5></li>
                     <li><h5>About</h5></li>
                     <li><h5>Contact</h5></li>
                     <li><h5>FAQ</h5></li>
                 </ul>
-                <div class="credit">© created by <span><a href='https://github.com/Vishwang0Suthar'>Dr!py</a></span> | all rights reserved </div>
+                <div class="credit">© created by <span><a href='https://github.com/Vishwang0Suthar'><p>Dr!py</p></a></span> | all rights reserved </div>
 
             </div>
 

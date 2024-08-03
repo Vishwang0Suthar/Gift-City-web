@@ -101,16 +101,15 @@ export default function Nav() {
             </svg>
           </a>
 
-          {/* <p>Gift <span>Connect</span></p> */}
         </div>
         <div className={`nav-elements ${scrolled ? 'scrolled' : ''}`}>
           <ul >
-            <li>Home</li>
-            <li>Contact</li>
-            <li>Event</li>
-            <li>Feedback</li>
-            <li>Sign Up</li>
-            <li>Login</li>
+            <a href='/'><li>Home</li></a>
+            <a href='#footer'><li>Contact</li></a>
+            <a href='#events'><li>Event</li></a>
+            <a href=''><li>Feedback</li></a>
+            <a href=''><li>Sign Up</li></a>
+            <a href=''><li>Login</li></a>
           </ul>
 
         </div>

@@ -96,7 +96,8 @@ const Carousel = ({ images }) => {
             >
               <img style={{
                 aspectRatio: "1/1",
-                objectFit: "cover",
+                maxHeight: "18em"
+                // objectFit: "cover",
               }} src={image} alt="imgs" />
               <h1>Gujarat’s GIFT City to get its first ‘twisted’ building...</h1>
               <p>

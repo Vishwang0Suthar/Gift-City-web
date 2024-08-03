@@ -36,9 +36,9 @@ img {
     overflow: hidden;
     margin-top: -2%;
     max-height: 65dvh;
-    margin-left: 7%;
-    margin-right: 2%;
-    padding: 2%;
+    margin-left: 8%;
+    /* margin-right: 2%; */
+    padding: 1.5%;
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0.23);
     border-radius: 16px;
@@ -59,9 +59,11 @@ img {
     gap: 2%;
     max-height: 28rem;
     min-width: 20rem;
-    padding: 3%;
+    padding: 1%;
     position: relative;
     transition: all ease-in-out;
+    justify-content: center;
+    align-items: center;
 
     /* &:hover{
     scale: 1.00005;
@@ -107,11 +109,13 @@ img {
 
 .item img {
     border-radius: 0.2rem;
-    width: 40vmin;
-    margin-top: -12%;
+    /* width: 40vmin; */
+    /* margin-top: -12%; */
     height: 90%;
     cursor: grab;
     object-fit: cover;
+    z-index: 10;
+
     pointer-events: none;
     /* border-right: 9px solid black; */
     /* border-width: 5px; */

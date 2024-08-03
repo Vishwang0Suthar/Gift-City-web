@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './polls.css';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import audio from '../sounds/00click.mp3';
+import iconR from '../images/right.png';
 
 const Polls = ({ polls }) => {
   const imageContainerRef = useRef(null);
   const carousel = useRef();
   const [width, setWidth] = useState(0);
+  const [mouseDownAt, setMouseDownAt] = useState(0);
+  const [prevPercentage, setPrevPercentage] = useState(0);
+  const [percentage, setPercentage] = useState(0);
 
   useEffect(() => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   }, []);
-
-  const [mouseDownAt, setMouseDownAt] = useState(0);
-  const [prevPercentage, setPrevPercentage] = useState(0);
-  const [percentage, setPercentage] = useState(0);
 
   const handleMouseDown = (e) => {
     setMouseDownAt(e.clientX);
@@ -53,18 +53,14 @@ const Polls = ({ polls }) => {
 
   const percentageToMove = 20;
 
-  const controls = useAnimation();
-  const moveCarousel = (direction) => {
-    const currentX = controls?.getBoundingClientRect()?.x || 0;
+  const prevSlide = () => {
+    setPercentage(Math.max(percentage - percentageToMove, -100));
+    setPrevPercentage(prevPercentage - percentageToMove);
+  };
 
-    const newX =
-      direction === 'right'
-        ? currentX - (width * percentageToMove) / 100
-        : currentX + (width * percentageToMove) / 100;
-
-    controls?.start({
-      x: newX,
-    });
+  const nextSlide = () => {
+    setPercentage(Math.min(percentage + percentageToMove, 0));
+    setPrevPercentage(prevPercentage + percentageToMove);
   };
 
   // Initialize states for selected options, one for each box
@@ -87,59 +83,69 @@ const Polls = ({ polls }) => {
     setSelectedOptions(newSelectedOptions);
   };
 
-  useEffect(() => {
-    controls.start({
-      x: 0,
-    });
-  }, [controls]);
-
-  const handleLeftClick = () => {
-    controls.start({ x: controls.get('x') + percentageToMove });
-  };
-
-  const handleRightClick = () => {
-    controls.start({ x: controls.get('x') - percentageToMove });
-  };
-
   return (
-    <motion.div
-      ref={carousel}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      className="polls"
-    >
+    <div>
+      <div className="Navi">
+        <img
+          className="bgimg-1"
+          onMouseDown={audio_click_play}
+          onMouseLeave={audio_click_pause}
+          draggable="false"
+          onClick={prevSlide}
+          src={iconR}
+          alt="bgimg"
+        />
+        <img
+          className="bgimg-2"
+          onMouseDown={audio_click_play}
+          onMouseLeave={audio_click_pause}
+          draggable="false"
+          onClick={nextSlide}
+          src={iconR}
+          alt="bgimg"
+        />
+      </div>
       <motion.div
-        drag="x"
-        dragConstraints={{ right: 0, left: -width }}
-        className="polls-container"
-        ref={imageContainerRef}
+        ref={carousel}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        className="polls"
       >
-        {polls.map((img, boxIndex) => (
-          <motion.div
-            key={boxIndex}
-            whileTap={{ cursor: 'grabbing' }}
-            onMouseDown={audio_click_play}
-            onMouseLeave={audio_click_pause}
-            className="box"
-          >
-            <header>{img[0]}</header>
-            {img.slice(1, 5).map((item, optionIndex) => (
-              <p
-                key={optionIndex}
-                onMouseDown={() => optionSelected(boxIndex, optionIndex)}
-                className={optionIndex === selectedOptions[boxIndex] ? 'selectedoption' : 'option'}
-                style={{
-                  color: optionIndex === selectedOptions[boxIndex] ? 'aliceblue' : '#000'
-                }}
-              >
-                {item}
-              </p>
-            ))}
-          </motion.div>
-        ))}
+        <motion.div
+          drag="x"
+          dragConstraints={{ right: 0, left: -width }}
+          className="polls-container"
+          ref={imageContainerRef}
+          animate={{ x: (percentage / 100) * width }}
+        >
+          {polls.map((img, boxIndex) => (
+            <motion.div
+              key={boxIndex}
+              whileTap={{ cursor: 'grabbing' }}
+              onMouseDown={audio_click_play}
+              onMouseLeave={audio_click_pause}
+              className="box"
+            >
+              <header>{img[0]}</header>
+              {img.slice(1, 5).map((item, optionIndex) => (
+                <p
+                  key={optionIndex}
+                  onMouseDown={() => optionSelected(boxIndex, optionIndex)}
+                  className={optionIndex === selectedOptions[boxIndex] ? 'selectedoption' : 'option'}
+                  style={{
+                    color: optionIndex === selectedOptions[boxIndex] ? 'aliceblue' : '#000',
+                    cursor: "pointer"
+                  }}
+                >
+                  {item}
+                </p>
+              ))}
+            </motion.div>
+          ))}
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -2,14 +2,14 @@
     display: flex;
     right: 0;
     overflow: hidden;
-    /* margin-top: -1%; */
+    margin-top: -2%;
     max-height: 65dvh;
-    margin-left: 7%;
-    margin-right: 2%;
+    margin-left: 8%;
+    /* margin-right: 2%; */
     z-index: 1;
     padding: 2%;
     /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.23);
+    /* background: rgba(255, 255, 255, 0.23); */
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3.2px);
@@ -19,7 +19,7 @@
 
 .polls-container {
     display: flex;
-    width: 100%;
+    width: auto;
     z-index: 1;
 
 

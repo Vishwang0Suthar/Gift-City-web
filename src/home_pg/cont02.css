@@ -3,14 +3,15 @@
     /* Horizontally center the content */
     align-items: center;
     align-items: center;
-    width: 100%;
-    height: 90dvh;
+    /* width: 100%; */
+    height: auto;
     overflow: hidden;
-    padding: 10px 0px 30px 0px;
+    /* padding: 10px 0px 30px 0px; */
     /* margin-left: 10vh; */
     filter: brightness(80%);
     object-fit: contain;
     min-height: 100%;
+    overflow: hidden;
 }
 
 .cont02 p,
@@ -28,20 +29,7 @@
 
 }
 
-.cont04 {
-    justify-content: center;
-    /* Horizontally center the content */
-    align-items: center;
-    align-items: center;
-    width: 100%;
-    height: 90dvh;
-    overflow: hidden;
-    /* margin-left: 10vh; */
-    filter: brightness(80%);
-    object-fit: contain;
-    min-height: 100%;
-    background: #F79256;
-}
+
 
 
 

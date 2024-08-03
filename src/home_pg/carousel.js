@@ -90,11 +90,14 @@ const Carousel = ({ images }) => {
           {images.map((image, index) => (
             <div
               key={index}
-              className={`item`}
+              className="item"
               onMouseDown={audio_click_play}
               onMouseLeave={audio_click_pause}
             >
-              <img src={image} alt="imgs" />
+              <img style={{
+                aspectRatio: "1/1",
+                objectFit: "cover",
+              }} src={image} alt="imgs" />
               <h1>Gujarat’s GIFT City to get its first ‘twisted’ building...</h1>
               <p>
                 The construction of the very first ‘twisted’ building in Gujarat’s GIFT City has been approved and will be built at a cost of Rs 700 crore

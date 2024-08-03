@@ -114,8 +114,6 @@ img {
     height: 90%;
     cursor: grab;
     object-fit: cover;
-    z-index: 10;
-
     pointer-events: none;
     /* border-right: 9px solid black; */
     /* border-width: 5px; */

@@ -36,22 +36,6 @@
     max-height: 50%;
 }
 
-/* .nav-logo p {
-    font-size: 38px;
-    font-weight: 600;
-    cursor:alias;
-    font-family: 'Montserrat', sans-serif;
-    color: #DC6300;
-}    */
-
-
-/* .nav-logo span {
-    transition: all 0.5s ease;
-    &:hover {
-        color: #000000;
-        cursor: none;
-    }
-} */
 
 .nav svg {
     height: 80%;
@@ -96,22 +80,16 @@
     max-height: 80%;
     list-style: none;
     display: flex;
-    /* cursor: none; */
     overflow: hidden;
     align-self: end;
-    /* padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 4%;
-    padding-right: 4%; */
-    /* gap: 2%; */
-    /* width: 100%; */
+
     text-align: center;
     flex-grow: 1;
 }
 
 
 
-.nav-elements li {
+.nav-elements a {
     padding: 2.5%;
     /* padding-bottom: 2%; */
     transition: all 0.5s ease;
@@ -121,15 +99,14 @@
     letter-spacing: 2px;
     height: 10%;
     /* width: 100%; */
-
+    appearance: none;
+    text-decoration: none;
     white-space: nowrap;
     display: inline-flex;
     position: relative;
 
-    /* Ensure the li itself is positioned relative */
     &:hover {
-        color: #000000;
-        cursor: none;
+        color: coral;
         scale: 1.10;
     }
 

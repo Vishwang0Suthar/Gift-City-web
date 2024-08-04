@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './polls.css';
 import { motion } from 'framer-motion';
 import audio from '../sounds/00click.mp3';
-import iconR from '../images/right.png';
+import iconR from '../assets/right.png';
 
 const Polls = ({ polls }) => {
   const imageContainerRef = useRef(null);

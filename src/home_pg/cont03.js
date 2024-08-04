@@ -1,12 +1,6 @@
 import './cont03.css';
 import Carousel from './carousel';
-import iconR from '../images/right.png';
-import slid1 from '../images/slid_7.jpg';
-import slid2 from '../images/slid_8.jpeg';
-import slid6 from '../images/slid_9.jpeg';
-import slid3 from '../images/slid_10.jpeg';
-import slid4 from '../images/slid_11.jpeg';
-import slid5 from '../images/slid_12.jpg';
+import BS from '../assets/BSP.png'
 
 function Cont03() {
     const images = [
@@ -32,7 +26,9 @@ function Cont03() {
         <img className="bgimg-2" draggable="false" src={iconR}  alt="bgimg" /> */}
             </div>
             <Carousel images={images} />
-
+            {/* <div className='bg-bs-img'> */}
+            <img className='bg-bs-img' src={BS} />
+            {/* </div> */}
         </section>
     )
 }

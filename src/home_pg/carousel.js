@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './carousel.css';
 import { motion } from 'framer-motion';
 import audio from '../sounds/00click.mp3';
-import iconR from '../images/right.png';
+import iconR from '../assets/right.png';
 
 const Carousel = ({ images }) => {
   const imageContainerRef = useRef(null);

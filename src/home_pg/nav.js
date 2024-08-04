@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// import svg from "../images/Gift-connect.svg"
+// import svg from "../assets/Gift-connect.svg"
 import "./nav.css";
-// import logo from "../images/logo.png"
+// import logo from "../assets/logo.png"
 // import clickSound from '../sounds/00click.mp3';
 export default function Nav() {
 

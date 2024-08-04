@@ -1,11 +1,9 @@
-import './cont04.css';
-import React, { useState, useRef } from 'react';
-import Polls from './polls'
+import "./cont04.css";
+import React, { useState, useRef } from "react";
+import Polls from "./polls";
 // import Carousel from './carousel'
 
-
 function Cont04() {
-
   const [poll] = useState([
     [`Do you own a laptop?`, `nuh`, `uh`, `yuh uh`, `lmeo`],
     [`Do you drive a car?`, `nuh`, `uh`, `yuh-uh`, `lmeo`],
@@ -21,7 +19,7 @@ function Cont04() {
 
       <Polls polls={poll} />
     </section>
-  )
+  );
 }
 
-export default Cont04
+export default Cont04;

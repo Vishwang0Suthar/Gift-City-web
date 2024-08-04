@@ -18,7 +18,7 @@
 .cont03 p,
 .cont04 p {
     margin-top: 1%;
-    margin-left: 40px;
+    /* margin-left: 40px; */
     color: #000;
     font-family: Montserrat;
     font-size: 58px;

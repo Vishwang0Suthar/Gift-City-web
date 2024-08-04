@@ -3,6 +3,7 @@
     /* Horizontally center the content */
     align-items: center;
     width: auto;
+    position: relative;
     height: auto;
     overflow: hidden;
     /* margin-bottom: 20px; */
@@ -12,4 +13,16 @@
     object-fit: contain;
     min-height: 100%;
     background: #FFCC70;
+    overflow: hidden;
+}
+
+
+
+.bg-bs-img {
+    position: absolute;
+    bottom: -80px;
+    /* left: 1; */
+    width: 83%;
+    height: auto;
+    z-index: -1;
 }

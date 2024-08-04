@@ -48,3 +48,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* .cont01, */
+/* .cont02,
+.cont03,2
+.cont04,
+.cont05,
+.horizontal-scrll {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+} */

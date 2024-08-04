@@ -1,0 +1,164 @@
+/* styles.css */
+
+/* Example component */
+.horizontal-scrll {
+    /* background: rgb(25, 66, 133);
+    background: linear-gradient(0deg, rgba(25, 43, 93, 1) 0%, rgba(21, 21, 21, 1) 100%); */
+    /* Tailwind's bg-neutral-800 */
+    background-color: #151515;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+.horizontal-scrll img {
+    position: absolute;
+    /* z-index: -1; */
+    left: 0;
+    scale: 1;
+}
+
+.horizontal-scrll video {
+    position: absolute;
+    /* z-index: -1; */
+    /* left: 0; */
+    height: 292vh;
+    width: auto;
+    scale: 1;
+}
+
+
+/* HorizontalScrollCarousel component */
+.carousel-container {
+    position: relative;
+    height: 292vh;
+
+    /* background-color: #1c1c1c; */
+    /* Tailwind's bg-neutral-900 */
+}
+
+.carousel-inner {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    padding-top: 3em;
+    justify-content: center;
+    margin-top: 10vh;
+    height: 95vh;
+    /* Tailwind's h-screen */
+    align-items: center;
+    overflow: hidden;
+    /* backdrop-filter: blur(20px); */
+    /* background-image: url("https://i.pinimg.com/originals/0b/41/25/0b41253a4041ddb57004d633e4979430.jpg"); */
+    /* background-blend-mode: multiply; */
+}
+
+.img-bg {
+    position: absolute;
+    z-index: -1;
+    height: 77vh;
+    /* margin-left: 10%; */
+    opacity: 0.5;
+    filter: contrast(130%) brightness(1050%);
+    border: 2px solid white;
+    box-shadow: 2px 2px inset;
+    border-radius: 20px;
+    filter: url("");
+    /* background-clip: content-box; */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    /* Tailwind's gap-4 */
+}
+
+.car-pr {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+/* Card component */
+.card {
+    position: relative;
+    height: 162px;
+    width: 288px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 0.5em;
+    border: 2px solid white;
+    box-shadow: 4px 4px 2px 3px black;
+}
+
+.carousel-inner p {
+    color: white;
+    margin: 0;
+    font-family: Montserrat;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.card2 {
+    position: relative;
+    height: 162px;
+    width: 288px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 0.5em;
+    border: 2px solid white;
+    box-shadow: 4px 4px 2px 3px black;
+
+}
+
+.card-background,
+.card2-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s;
+}
+
+.card:hover .card-background,
+.card2:hover .card2-background {
+    transform: scale(1.05);
+}
+
+.card-content,
+.card2-content {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-title,
+.card2-title {
+    text-align: center;
+    /* background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); */
+    padding: 0.2rem;
+    /* Tailwind's p-8 */
+    font-size: 1rem;
+    /* Tailwind's text-6xl */
+    font-weight: 900;
+    /* Tailwind's font-black */
+    text-transform: uppercase;
+    color: white;
+    /* backdrop-filter: blur(10px); */
+    /* Tailwind's backdrop-blur-lg */
+}
+
+/* .bg-vid {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    rotate: 90deg;
+} */

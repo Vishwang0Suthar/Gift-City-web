@@ -57,7 +57,7 @@
 .img-bg {
     position: absolute;
     z-index: -1;
-    height: 77vh;
+    height: 598px;
     /* margin-left: 10%; */
     opacity: 0.5;
     filter: contrast(130%) brightness(1050%);

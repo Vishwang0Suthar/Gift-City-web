@@ -21,7 +21,7 @@
 .bg-bs-img {
     position: absolute;
     bottom: -80px;
-    /* left: 1; */
+    margin-left: 18px;
     width: 83%;
     height: auto;
     z-index: -1;

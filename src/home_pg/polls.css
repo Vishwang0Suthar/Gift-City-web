@@ -11,8 +11,8 @@
     /* From https://css.glass */
     /* background: rgba(255, 255, 255, 0.23); */
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.2px);
+    box-shadow: 5px 4px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(3.2px);
     border: 1px solid rgba(255, 255, 255, 0.41);
 }
@@ -25,18 +25,50 @@
 
 }
 
+.user-opt {
+    width: 100%;
+    display: flex;
+    gap: 2em;
+    /* justify-content: space-between; */
+    margin: 0;
+}
+
+.user-opt p:first-child {
+    z-index: 2000;
+    border-radius: 1em;
+    cursor: pointer;
+
+    &:hover {
+        color: white;
+        background: black;
+    }
+}
+
+.user-opt p:last-child {
+    z-index: 2000;
+    border-radius: 1em;
+    cursor: pointer;
+
+    &:hover {
+        color: white;
+        background: black;
+    }
+}
+
+
 .box p {
     font-size: 15px;
-    font-weight: 900;
-    width: 100%;
+    /* font-weight: 900; */
+    width: 90%;
     position: relative;
     z-index: 2;
-    align-items: center;
+    /* align-items: center; */
     font-style: normal;
     font-weight: 100;
     line-height: 10px;
     padding: 5%;
-    margin-left: -2%;
+    text-align: center;
+    /* margin-left: -2%; */
     margin-top: 5%;
     border-radius: 2em;
     border: 2px solid black;
@@ -52,7 +84,7 @@
     background: #000;
     border: 2px solid white;
     padding: 5%;
-    margin-left: -2%;
+    /* margin-left: -2%; */
     margin-top: 5%;
     border-radius: 2em;
     transition: all 550ms ease-in-out;

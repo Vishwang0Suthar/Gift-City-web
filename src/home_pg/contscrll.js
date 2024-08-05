@@ -7,6 +7,7 @@ const ScrollContainer = () => {
         <section class='horizontal-scrll'>
 
             <HorizontalScroll />
+
         </section>
     )
 }

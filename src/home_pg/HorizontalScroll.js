@@ -1,7 +1,7 @@
 import { motion, useTransform, useScroll } from 'framer-motion';
 import { useRef } from 'react';
 import './HorizontalScroll.css';
-import BGvid from '../assets/bg-vid.mp4'
+import BGvid from '../assets/good-bg.mp4'
 const HorizontalScroll = () => {
     return (
         <div className="example-container">
@@ -23,10 +23,7 @@ const HorizontalScrollCarousel = () => {
     return (
         <div ref={targetRef} className="carousel-container">
             {/* <img src='https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Burj_Khalifa.jpg/1200px-Burj_Khalifa.jpg' /> */}
-            {/* <video autoPlay loop muted playsInline>
-                <source src={BGvid} type="video/mp4" />
-                Your browser does not support the video tag.
-            </video> */}
+
             <div className="carousel-inner">
                 <p>Our Partners</p>
                 <motion.div style={{ x: x1 }} className="carousel-track">
@@ -39,10 +36,13 @@ const HorizontalScrollCarousel = () => {
                         <Card2 card2={card2} key={card2.id} />
                     ))}
                 </motion.div>
-                <img src='https://png.pngtree.com/thumb_back/fh260/background/20210915/pngtree-noise-texture-black-background-image_880568.jpg' className='img-bg' />
-
+                {/* <img src='https://png.pngtree.com/thumb_back/fh260/background/20210915/pngtree-noise-texture-black-background-image_880568.jpg' className='img-bg' /> */}
+                {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/ubFq-wV3Eic?start=5178&amp;end=5264" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
                 {/* <video src={BGvid} className='bg-vid' /> */}
-
+                <video autoPlay loop muted playsInline>
+                    <source src={BGvid} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     );

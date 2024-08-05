@@ -8,7 +8,7 @@
     overflow: hidden;
 }
 
-.cont-1 img {
+.cont-1 video {
     width: 100%;
     /* margin-left: 10vh; */
     object-fit: contain;

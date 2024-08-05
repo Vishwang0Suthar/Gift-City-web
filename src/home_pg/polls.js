@@ -82,6 +82,16 @@ const Polls = ({ polls }) => {
     // Set the new state
     setSelectedOptions(newSelectedOptions);
   };
+  const ClearOpt = (boxIndex) => {
+    // Copy the existing selected options array
+    const newSelectedOptions = [...selectedOptions];
+
+    // Clear the selected option for the specified question
+    newSelectedOptions[boxIndex] = null;
+
+    // Set the new state
+    setSelectedOptions(newSelectedOptions);
+  };
 
   return (
     <div>
@@ -141,7 +151,10 @@ const Polls = ({ polls }) => {
                   {item}
                 </p>
               ))}
-            </motion.div>
+              <div className='user-opt'>
+                <p onClick={() => ClearOpt(boxIndex)}>Clear</p>
+                <p>Submit</p>
+              </div></motion.div>
           ))}
         </motion.div>
       </motion.div>

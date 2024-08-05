@@ -10,6 +10,9 @@
     scroll-behavior: smooth;
 }
 
+
+
+
 .horizontal-scrll img {
     position: absolute;
     /* z-index: -1; */
@@ -19,36 +22,59 @@
 
 .horizontal-scrll video {
     position: absolute;
-    /* z-index: -1; */
+    z-index: -1;
     /* left: 0; */
-    height: 292vh;
+    /* height: 292vh; */
+    filter: contrast(90%);
+    filter: brightness(0%);
+    filter: hue-rotate(0deg);
+    animation: hueRotate 20s infinite cubic-bezier(0.55, 0.085, 0.68, 0.53);
     width: auto;
-    scale: 1;
+    /* backdrop-filter: blur(2px); */
+    scale: 0.7;
+}
+
+@keyframes hueRotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(180deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
 }
 
 
 /* HorizontalScrollCarousel component */
 .carousel-container {
     position: relative;
-    height: 292vh;
-
+    height: 400vh;
+    /* padding-top: 10vh; */
     /* background-color: #1c1c1c; */
     /* Tailwind's bg-neutral-900 */
 }
 
 .carousel-inner {
     position: sticky;
-    top: 0;
+    top: 15vh;
     display: flex;
     flex-direction: column;
-    gap: 4em;
-    padding-top: 3em;
+    gap: 2.5em;
+    /* padding-top: 2em; */
+    /* margin-top: 10em; */
     justify-content: center;
     margin-top: 10vh;
-    height: 95vh;
+    height: 80vh;
     /* Tailwind's h-screen */
     align-items: center;
     overflow: hidden;
+    border-radius: 20px;
+    border: white 2px solid;
+    /* background-color: rgba(255, 255, 255, 0.5) */
     /* backdrop-filter: blur(20px); */
     /* background-image: url("https://i.pinimg.com/originals/0b/41/25/0b41253a4041ddb57004d633e4979430.jpg"); */
     /* background-blend-mode: multiply; */

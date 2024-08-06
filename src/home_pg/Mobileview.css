@@ -1,0 +1,44 @@
+@media only screen and (max-width: 786px) {
+    .mob-view {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        height: 100vh;
+        width: 100vw;
+        /* min-height: 1200px; */
+        /* min-width: 520px; */
+        background-color: rgb(0, 0, 0, 0.9);
+        z-index: 1000;
+        padding: 30px 2px 20px 2px;
+
+    }
+
+    .mob-box {
+        display: flex;
+        flex-direction: column;
+        height: 80%;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        background-color: rgb(0, 0, 0, 0.5);
+        border-radius: 20px;
+        border: solid 1px white;
+        display: flex;
+        padding: 2em;
+        /* margin: 2em; */
+    }
+
+    .mob-view p {
+        /* text */
+        color: white;
+        font-size: 30px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .mob-view {
+        display: none;
+    }
+}

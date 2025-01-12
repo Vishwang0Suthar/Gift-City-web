@@ -1,12 +1,12 @@
-import { motion, useTransform, useScroll } from 'framer-motion';
+import { motion, useTransform, useScroll, useSpring } from 'framer-motion';
 import { useRef } from 'react';
 import './HorizontalScroll.css';
-import BGvid from '../assets/good-bg.mp4'
+import BGvid from '../assets/good-bg.mp4';
+
 const HorizontalScroll = () => {
     return (
         <div className="example-container">
             <HorizontalScrollCarousel />
-
         </div>
     );
 };
@@ -17,28 +17,26 @@ const HorizontalScrollCarousel = () => {
         target: targetRef,
     });
 
-    const x1 = useTransform(scrollYProgress, [0, 1], [0, -200 * (cards.length + 2)]);
-    const x2 = useTransform(scrollYProgress, [0, 1], [0, 200 * (cards2.length + 2)]);
+    // Apply smooth spring for x1 and x2
+    const x1Raw = useTransform(scrollYProgress, [0, 1], [0, -200 * (cards.length + 2)]);
+    const x2Raw = useTransform(scrollYProgress, [0, 1], [0, 200 * (cards2.length + 2)]);
+    const x1 = useSpring(x1Raw, { stiffness: 30, damping: 20 });
+    const x2 = useSpring(x2Raw, { stiffness: 30, damping: 20 });
 
     return (
         <div ref={targetRef} className="carousel-container">
-            {/* <img src='https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Burj_Khalifa.jpg/1200px-Burj_Khalifa.jpg' /> */}
-
             <div className="carousel-inner">
                 <p>Our Partners</p>
                 <motion.div style={{ x: x1 }} className="carousel-track">
-                    {cards.concat(cards).concat(cards).map((card, index) => ( // Duplicate the cards array
+                    {cards.concat(cards).concat(cards).map((card, index) => (
                         <Card card={card} key={index} />
                     ))}
                 </motion.div>
                 <motion.div style={{ x: x2 }} className="carousel-track">
-                    {cards2.concat(cards2).concat(cards2).map((card2) => (
-                        <Card2 card2={card2} key={card2.id} />
+                    {cards2.concat(cards2).concat(cards2).map((card2, index) => (
+                        <Card2 card2={card2} key={index} />
                     ))}
                 </motion.div>
-                {/* <img src='https://png.pngtree.com/thumb_back/fh260/background/20210915/pngtree-noise-texture-black-background-image_880568.jpg' className='img-bg' /> */}
-                {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/ubFq-wV3Eic?start=5178&amp;end=5264" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
-                {/* <video src={BGvid} className='bg-vid' /> */}
                 <video autoPlay loop muted playsInline>
                     <source src={BGvid} type="video/mp4" />
                     Your browser does not support the video tag.
@@ -55,9 +53,7 @@ const Card = ({ card }) => {
                 style={{ backgroundImage: `url(${card.url})` }}
                 className="card-background"
             ></div>
-            <div className="card-content">
-                {/* <p className="card-title">{card.title}</p> */}
-            </div>
+            <div className="card-content"></div>
         </div>
     );
 };
@@ -69,14 +65,10 @@ const Card2 = ({ card2 }) => {
                 style={{ backgroundImage: `url(${card2.url})` }}
                 className="card2-background"
             ></div>
-            <div className="card2-content">
-                {/* <p className="card2-title">{card2.title}</p> */}
-            </div>
+            <div className="card2-content"></div>
         </div>
     );
 };
-
-
 
 export default HorizontalScroll;
 

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './cont01.css'; // Import your CSS for styling
 import BGvid from '../assets/Home-banner.mp4'
-function Slider() {
+const Container1 = ({ handleVideoLoad }) => {
   // const [currentSlide, setCurrentSlide] = useState(0);
+  // const [videoLoaded, setVideoLoaded] = useState(false);
+
 
   // const slides = [
   //   { image: '../assets/img1.jpg', link: 'https://pmkisan.gov.in/' },
@@ -30,7 +32,8 @@ function Slider() {
     <div className="container">
       <div className='cont-1'>
         {/* <img className="bgimg" src={bgimg} alt="bgimg" /> */}
-        <video autoPlay loop muted playsInline>
+        <video onCanPlayThrough={handleVideoLoad} autoPlay loop muted playsInline preload="auto">
+
           <source src={BGvid} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -75,4 +78,4 @@ function Slider() {
   );
 }
 
-export default Slider;
+export default Container1;

@@ -1,5 +1,5 @@
 import { motion, useTransform, useScroll, useSpring } from 'framer-motion';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import './HorizontalScroll.css';
 import BGvid from '../assets/good-bg.mp4';
 
@@ -20,8 +20,8 @@ const HorizontalScrollCarousel = () => {
     // Apply smooth spring for x1 and x2
     const x1Raw = useTransform(scrollYProgress, [0, 1], [0, -200 * (cards.length + 2)]);
     const x2Raw = useTransform(scrollYProgress, [0, 1], [0, 200 * (cards2.length + 2)]);
-    const x1 = useSpring(x1Raw, { stiffness: 30, damping: 20 });
-    const x2 = useSpring(x2Raw, { stiffness: 30, damping: 20 });
+    const x1 = useSpring(x1Raw, { stiffness: 30, damping: 10 });
+    const x2 = useSpring(x2Raw, { stiffness: 30, damping: 10 });
 
     return (
         <div ref={targetRef} className="carousel-container">
@@ -37,7 +37,8 @@ const HorizontalScrollCarousel = () => {
                         <Card2 card2={card2} key={index} />
                     ))}
                 </motion.div>
-                <video autoPlay loop muted playsInline>
+                <video autoPlay loop muted playsInline preload="auto">
+
                     <source src={BGvid} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
@@ -46,29 +47,31 @@ const HorizontalScrollCarousel = () => {
     );
 };
 
-const Card = ({ card }) => {
+const Card = React.memo(({ card }) => {
     return (
         <div className="card">
             <div
                 style={{ backgroundImage: `url(${card.url})` }}
+                loading="lazy"
                 className="card-background"
             ></div>
             <div className="card-content"></div>
         </div>
     );
-};
+});
 
-const Card2 = ({ card2 }) => {
+const Card2 = React.memo(({ card2 }) => {
     return (
         <div className="card2">
             <div
                 style={{ backgroundImage: `url(${card2.url})` }}
+                loading="lazy"
                 className="card2-background"
             ></div>
             <div className="card2-content"></div>
         </div>
     );
-};
+});
 
 export default HorizontalScroll;
 

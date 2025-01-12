@@ -114,7 +114,7 @@ export default function Nav() {
 
         </div>
       </div>
-      <div class="progress-bar" id="myBar"></div>
+      <div class="progress-bar" id="myBar" ></div>
     </div>
   );
 }

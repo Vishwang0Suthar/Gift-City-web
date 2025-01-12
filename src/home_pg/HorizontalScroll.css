@@ -53,6 +53,8 @@
 .carousel-container {
     position: relative;
     height: 400vh;
+    will-change: transform;
+
     /* padding-top: 10vh; */
     /* background-color: #1c1c1c; */
     /* Tailwind's bg-neutral-900 */

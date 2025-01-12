@@ -13,7 +13,7 @@ const Container05 = lazy(() => import('./home_pg/cont05.js'));
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
-
+  const [videoLoaded, setVideoLoaded] = useState(false);
   useEffect(() => {
     // Function to update the state based on screen width
     const handleResize = () => {
@@ -30,21 +30,51 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setVideoLoaded(true);
+    }, 1000); // 3000ms = 3 seconds
+
+    // Cleanup the timer on component unmount
+    return () => clearTimeout(timer);
+  }
+    , []);
+
   return (
     <div draggable="false" className="App">
-      <Suspense fallback={<div>Loading...</div>}>
-        {/* Conditionally render Mobileview for mobile devices */}
-        {isMobile ? (
-          <Mobileview />
+
+
+      <Suspense fallback={
+        <div className='loading-animation'>
+          <div className='loading-content'>
+            <div className='loader'></div>
+            <p>Crafting your experience</p>
+
+          </div>
+        </div>}
+      >
+        {!videoLoaded ? (
+          <div className="loading-animation">
+            <div className="loading-content">
+              <div className="loader"></div>
+              <p>Crafting your experience  </p>
+            </div>
+          </div>
         ) : (
           <>
-            <Nav />
-            <Container01 />
-            <Container02 />
-            <Container03 />
-            <ScrollContainer />
-            <Container04 />
-            <Container05 />
+            {isMobile ? (
+              <Mobileview />
+            ) : (
+              <>
+                <Nav />
+                <Container01 />
+                <Container02 />
+                <Container03 />
+                <ScrollContainer />
+                <Container04 />
+                <Container05 />
+              </>
+            )}
           </>
         )}
       </Suspense>
